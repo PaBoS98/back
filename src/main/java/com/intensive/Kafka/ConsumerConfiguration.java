@@ -12,18 +12,20 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 @Configuration
 public class ConsumerConfiguration {
 
-//    private static final String KAFKA_BROKER = "35.228.204.58:9092";
+//    private static final String KAFKA_BROKER = "35.228.100.147:9092";
     private static final String KAFKA_BROKER = "localhost:9092";
     private static final String GROUP_ID = "group1";
 
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfigurations());
+        
     }
 
     @Bean
